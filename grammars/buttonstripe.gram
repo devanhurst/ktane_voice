@@ -1,0 +1,4 @@
+#JSGF V1.0;
+
+grammar stripe;
+public <command> = ( red | blue | yellow | white | black );
