@@ -1,5 +1,5 @@
 require 'pocketsphinx-ruby'
-
+require 'pry'
 require "espeak"
 include ESpeak
 
@@ -10,6 +10,7 @@ require_rel "solvers"
 include Check
 include Wires
 include Button
+include Keypads
 
 @bomb = Bomb.new
 
@@ -24,12 +25,18 @@ def select_module
     when "bomb check"
       Speech.new(Check.check_all(Pocketsphinx::Configuration::Grammar.new('grammars/check.gram'), @bomb)).speak
       return select_module
-    when "wires"
-      Speech.new(Wires.solve(Pocketsphinx::Configuration::Grammar.new('grammars/wires.gram'), @bomb)).speak
+    when "defuse wires"
+      Speech.new(Wires.solve_wires(Pocketsphinx::Configuration::Grammar.new('grammars/wires.gram'), @bomb)).speak
       return select_module
-     when "button"
-      Speech.new(Button.solve(Pocketsphinx::Configuration::Grammar.new('grammars/button.gram'), @bomb)).speak
+     when "defuse button"
+      Speech.new(Button.solve_button(Pocketsphinx::Configuration::Grammar.new('grammars/button.gram'), @bomb)).speak
       return select_module
+    when "defuse keypads"
+      Speech.new(Keypads.sanitize_input(Pocketsphinx::Configuration::Grammar.new('grammars/keypads.gram'))).speak 
+      return select_module
+    when "we're finished"
+      Speech.new("It was my pleasure.").speak
+      return
     end
   end
 end

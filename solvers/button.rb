@@ -1,5 +1,5 @@
 module Button
-  def solve(configuration, bomb)
+  def solve_button(configuration, bomb)
     recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
     recognizer.recognize do |speech|
       colour = speech[0]

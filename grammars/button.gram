@@ -1,4 +1,6 @@
 #JSGF V1.0;
 
 grammar module;
-public <command> = (bomb check | wires | button | keypads | simon says | words one | words two | memory | morse code | complicated wires | wire sequences | maze | password | knob);
+public <command> = ( um | <colour> <label> );
+<colour> = ( red | blue | white | black | yellow );
+<label> = ( abort | detonate | hold | press );

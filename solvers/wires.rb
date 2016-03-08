@@ -1,8 +1,9 @@
 module Wires
-  def solve(configuration, bomb)
+  def solve_wires(configuration, bomb)
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |wires|
       puts wires
       wires = wires.split(" ")
+      wires.delete("wire")
       case wires.length
       when 3
         if wires.include?("red") == false
@@ -49,6 +50,8 @@ module Wires
         else
           return "CUT THE FOURTH WIRE"
         end
+      else
+        return solve_wires(configuration, bomb)
       end
     end
   end

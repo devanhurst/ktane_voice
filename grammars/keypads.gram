@@ -1,4 +1,5 @@
 #JSGF V1.0;
 
 grammar module;
-public <command> = (bomb check | wires | button | keypads | simon says | words one | words two | memory | morse code | complicated wires | wire sequences | maze | password | knob);
+public <command> = ( um | (key <key>)* );
+<key> = ( letter q | letter a | lambda | lightning | alien | letter h | backwards c | letter e | curly | white star | question mark | copyright | butt | letter i | letter r | six | paragraph | letter p | smiley | trident | letter c | black star | snake | hash | a e | letter n | omega );

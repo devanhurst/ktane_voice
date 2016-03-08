@@ -25,6 +25,7 @@ class Bomb
   end
 
   def vowel_check(response)
+    puts "Vowel?"
     if @vowel == nil
       if response == "yes"
         @vowel = true
@@ -35,6 +36,7 @@ class Bomb
   end
 
   def final_digit_check
+    puts "Final digit?"
     if @final_digit_odd == nil
       if gets.chomp.to_i % 2 == 0
         @final_digit_odd = false
@@ -45,6 +47,7 @@ class Bomb
   end
 
   def batteries_check
+    puts "No. of batteries?"
     if @battery_count == nil
       puts "How many batteries are on the bomb?"
       @battery_count = gets.chomp.to_i
