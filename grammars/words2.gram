@@ -1,8 +1,4 @@
 #JSGF V1.0;
 
-grammar module;
-public <command> = ( bomb check | <success> | <failure> | defuse <module> | add a strike );
-<static> = ( e | a | eye | oh | ooh | awe );
-<module> = ( wires | button | keypads | simon says | words one | words two | memory | morse code | complicated wires | wire sequences | maze | password | knobs );
-<success> = (the bomb is defused | we made it);
-<failure> = the bomb (detonated | blew up);
+grammar words2;
+public <command> = the word is ( ready | first | no | blank | nothing | yes | what statement | u h h h | left | right | middle | okay | you word | you are words | your possessive | you're contraction | u r letters | u letter | uh huh | staccato | what question | done | next | hold | sure | like );

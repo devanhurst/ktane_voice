@@ -13,6 +13,7 @@ include Button
 include Keypads
 include Memory
 include WireSequences
+include Words
 
 @bomb = Bomb.new
 
@@ -46,7 +47,10 @@ def select_module
     when "reset wire sequences"
       Speech.new(WireSequences.reset_wire_sequences(@bomb)).speak
       return select_module
-    when "the bomb is defused", "we made it"
+    when "defuse words"
+      Speech.new(Words.solve_1(Pocketsphinx::Configuration::Grammar.new('grammars/words1.gram'))).speak
+      return select_module
+    when "the bomb is defused", "we did it"
       Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
       return
     when "the bomb detonated", "the bomb blew up"
