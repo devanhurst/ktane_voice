@@ -8,36 +8,47 @@ module Check
       case check[0]
       when "batteries"
         bomb.battery_count = numbers[check[1]]
+        Speech.new("#{numbers[check[1]]} battery").speak
       when "digit"
         digit = numbers[check[1]]
         if digit % 2 == 0
           bomb.final_digit_odd = false
+          Speech.new("Even").speak
         else
           bomb.final_digit_odd = true
+          Speech.new("Odd").speak        
         end
       when "vowel"
         if check[1] == "yes"
           bomb.vowel = true
+          Speech.new("Vowel").speak
         else
           bomb.vowel = false
+          Speech.new("No vowel").speak
         end
       when "car"
         if check[1] == "yes"
           bomb.indicator_car = true
+          Speech.new("Car").speak
         else
           bomb.indicator_car = false
+          Speech.new("No car").speak
         end
       when "freak"
         if check[1] == "yes"
           bomb.indicator_frk = true
+          Speech.new("Freak").speak
         else
           bomb.indicator_frk = false
+          Speech.new("No freak").speak
         end
       when "parallel"
-        if check[1] == "yes"
+        if check.last == "yes"
           bomb.parallel_port = true
+          Speech.new("Parallel port").speak
         else
           bomb.parallel_port = false
+          Speech.new("No parallel port").speak
         end
       end
       if bomb.battery_count == nil || bomb.vowel == nil || bomb.final_digit_odd == nil || bomb.indicator_frk == nil || bomb.indicator_car == nil || bomb.parallel_port == nil

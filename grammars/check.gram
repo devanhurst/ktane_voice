@@ -1,6 +1,6 @@
 #JSGF V1.0;
 
 grammar check;
-public <command> = ( /5/ uh | /1/ batteries <number> | /1/ car <boolean> | /1/ freak <boolean> | /1/ vowel <boolean> | /1/ digit <number> | /1/ parallel <boolean> );
+public <command> = ( /5/ uh | /1/ batteries <number> | /1/ car <boolean> | /1/ freak <boolean> | /1/ vowel <boolean> | /1/ digit <number> | /1/ parallel port <boolean> );
 <number> = ( one | two | three | four | five | six | seven | eight | nine | zero);
 <boolean> = ( yes | no );

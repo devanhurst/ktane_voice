@@ -1,9 +1,11 @@
 module Wires
   def solve_wires(configuration, bomb)
+    Speech.new("wires go").speak
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |wires|
       puts wires
       wires = wires.split(" ")
       wires.delete("wire")
+      Speech.new(wires.join(" ")).speak
       case wires.length
       when 3
         if wires.include?("red") == false

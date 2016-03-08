@@ -23,6 +23,7 @@ def select_module
     puts speech
     case speech
     when "bomb check"
+      Speech.new("Go!").speak
       Speech.new(Check.check_all(Pocketsphinx::Configuration::Grammar.new('grammars/check.gram'), @bomb)).speak
       return select_module
     when "defuse wires"
@@ -34,8 +35,11 @@ def select_module
     when "defuse keypads"
       Speech.new(Keypads.sanitize_input(Pocketsphinx::Configuration::Grammar.new('grammars/keypads.gram'))).speak 
       return select_module
-    when "we're finished"
-      Speech.new("It was my pleasure.").speak
+    when "the bomb is defused", "we made it"
+      Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!", "Thank fuck for that."].sample).speak
+      return
+    when "the bomb detonated", "the bomb blew up"
+      Speech.new(["It was all my fault.", "It's not my fault.", "I hope you're proud of yourself.", "You shit dick."].sample).speak
       return
     end
   end

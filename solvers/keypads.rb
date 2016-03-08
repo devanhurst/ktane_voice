@@ -1,21 +1,22 @@
 require 'pry'
 module Keypads
-  @choices = ['letter q', 'letter a', 'lambda', 'lightning', 'alien', 'letter h', 'backwards c', 'letter e',
-            'curly', 'white star', 'question mark', 'copyright', 'butt', 'letter i', 'letter r',
-            'six', 'paragraph', 'letter p', 'smiley', 'trident', 'letter c', 'black star', 'snake',
-            'hash', 'a e', 'letter n', 'omega']
+  @choices = ['balloon', 'pyramid', 'lambda', 'lightning', 'spaceship', 'letter h', 'backward c', 'letter e',
+            'curly fry', 'white star', 'question mark', 'copyright', 'butt', 'inkblot', 'half r',
+            'six', 'paragraph', 'upside down p', 'smiley face', 'trident', 'c square', 'black star', 'snake',
+            'hash', 'a e together', 'letter n', 'omega']
 
-  @solutions = [['letter q','letter a','lambda','lightning','alien','letter h','backwards c'],
-                ['letter e','letter q','backwards c','curly','white star','letter h','question mark'],
-                ['copyright','butt','curly','letter i','letter r','lambda','white star'],
-                ['six','paragraph','letter p','alien','letter i','question','smiley'],
-                ['trident','smiley','letter p','letter c','paragraph','snake','black star'],
-                ['six','letter e','hash','a e','trident','letter n','omega']]
+  @solutions = [['balloon','pyramid','lambda','lightning','spaceship','letter h','backward c'],
+                ['letter e','balloon','backward c','curly fry','white star','letter h','question mark'],
+                ['copyright','butt','curly fry','inkblot','half r','lambda','white star'],
+                ['six','paragraph','upside down p','spaceship','inkblot','question mark','smiley face'],
+                ['trident','smiley face','upside down p','c square','paragraph','snake','black star'],
+                ['six','letter e','hash','a e together','trident','letter n','omega']]
   @possible_answer = []
   @final_answer = []
   @count = 0
 
   def sanitize_input(configuration)
+    Speech.new("keypads go").speak
     recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
     recognizer.recognize do |symbols|
       puts symbols
@@ -31,7 +32,6 @@ module Keypads
   end
 
   def solve_keypads(symbols, count=0)
-    binding.pry
     if count == 6
       Speech.new("Please try again.")
       return sanitize_input(Pocketsphinx::Configuration::Grammar.new('./grammars/keypads.gram'))
