@@ -1,0 +1,5 @@
+#JSGF V1.0;
+
+grammar memory;
+public <command> = ( sequence <number> <number> <number> <number> <number> );
+<number> = ( one | two | three | four );

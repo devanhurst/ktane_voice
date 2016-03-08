@@ -1,0 +1,6 @@
+#JSGF V1.0;
+
+grammar wiresequences;
+public <command> = ( <color> <letter> next* )* done;
+<color> = ( red | blue | black );
+<letter> = ( alpha | bravo | charlie);

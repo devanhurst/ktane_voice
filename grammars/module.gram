@@ -1,4 +1,8 @@
 #JSGF V1.0;
 
 grammar module;
-public <command> = ( /6/ uh | /2/ bomb check | /1/ the bomb is defused | /1/ we made it | /1/ the bomb (detonated | blew up) | /3/ defuse ( wires | button | keypads | simon says | words one | words two | memory | morse code | complicated wires | wire sequences | maze | password | knob ) );
+public <command> = ( bomb check | <success> | <failure> | defuse <module> | add a strike | reset wire sequences );
+<static> = ( e | a | eye | oh | ooh | awe );
+<module> = ( wires | button | keypads | simon says | words one | words two | memory | morse code | complicated wires | sequence | maze | password | knobs );
+<success> = (the bomb is defused | we made it);
+<failure> = the bomb (detonated | blew up);

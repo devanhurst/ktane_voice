@@ -10,6 +10,9 @@ class Bomb
   attr_accessor :memory_round
   attr_accessor :memory_positions
   attr_accessor :memory_labels
+  attr_accessor :wire_sequences_red_count
+  attr_accessor :wire_sequences_blue_count
+  attr_accessor :wire_sequences_black_count
 
   def initialize
     @vowel = nil
@@ -20,8 +23,11 @@ class Bomb
     @parallel_port = nil
     @strikes = 0
     @memory_round = 1
-    @memory_positions = []
-    @memory_labels = []
+    @memory_positions = {}
+    @memory_labels = {}
+    @wire_sequences_black_count = 0
+    @wire_sequences_blue_count = 0
+    @wire_sequences_red_count = 0
   end
 
   def vowel_check(response)
