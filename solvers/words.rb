@@ -40,7 +40,7 @@ module Words
       "nothing" => ["uhhh", "right", "okay", "middle", "yes", "blank", "no", "press", "left", "what", "wait", "first", "nothing"],
       "yes" => ["okay", "right", "uhhh", "middle", "first", "what", "press", "ready", "nothing", "yes"],
       "what statement" => ["uhhh", "what"],
-      "uhhh" => ["ready", "nothing", "left", "what", "okay", "yes", "right", "no", "press", "blank", "uhhh"],
+      "u h h h" => ["ready", "nothing", "left", "what", "okay", "yes", "right", "no", "press", "blank", "uhhh"],
       "left" => ["right", "left"],
       "right" => ["yes", "nothing", "ready", "press", "no", "wait", "what", "right"],
       "middle" => ["blank", "ready", "okay", "what", "nothing", "press", "no", "wait", "left", "middle"],

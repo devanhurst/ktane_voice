@@ -22,7 +22,7 @@ module MorseCode
       @entered_characters = []
       return "ANSWER... #{possible_answers.first}"
     else
-      prompt_morse_code
+      return prompt_morse_code
     end
   end
 
@@ -104,8 +104,8 @@ module MorseCode
     when '--..'
       return 'z'
     else
+      return ''
       Speech.new("Invalid.").speak
-      return prompt_morse_code
     end
   end
 end

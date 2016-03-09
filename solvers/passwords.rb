@@ -25,7 +25,6 @@ module Passwords
     if possibilities.count == 1
       return "The password is #{possibilities.first}."
     else
-      Speech.new("No result.").speak
       return prompt_user(bomb)
     end
   end

@@ -242,6 +242,8 @@ module Mazes
         return maze
       end
     end
+    Speech.new("Incorrect.")
+    return prompt_mazes
   end
 
   def output_found_path(path)
