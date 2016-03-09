@@ -16,6 +16,7 @@ include WireSequences
 include Words
 include ComplicatedWires
 include MorseCode
+include Mazes
 
 @bomb = Bomb.new
 
@@ -57,6 +58,10 @@ def select_module
       return select_module
     when "defuse morse code"
       Speech.new(MorseCode.prompt_morse_code).speak
+      return select_module
+    when "defuse maze"
+      Mazes.prompt_mazes
+      return select_module
     when "the bomb is defused", "we did it"
       Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
       return select_module
