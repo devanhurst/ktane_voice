@@ -1,6 +1,4 @@
 module ComplicatedWires
-  @solution = ""
-
   def cut?(combination, bomb)
     10.times { puts combination }
     case combination
@@ -18,15 +16,16 @@ module ComplicatedWires
   end
 
   def solve_complicated(configuration, bomb)
+    solution = ""
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |wires|
       wires = wires.split(' ')
       wires.delete('done')
       wires = wires.join(' ').split("next")
       wires.each do |combination|
         combination.strip!
-        cut?(combination.split(' ').uniq.sort.join(' '), bomb) ? (@solution += "YES...") : (@solution += "NO...")
+        cut?(combination.split(' ').uniq.sort.join(' '), bomb) ? (solution += "YES...") : (solution += "NO...")
       end
-      return @solution
+      return solution
     end
   end
 end

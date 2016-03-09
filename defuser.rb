@@ -17,6 +17,7 @@ include Words
 include ComplicatedWires
 include MorseCode
 include Mazes
+include Passwords
 
 @bomb = Bomb.new
 
@@ -47,9 +48,6 @@ def select_module
     when "defuse sequence"
       Speech.new(WireSequences.solve_wire_sequences(Pocketsphinx::Configuration::Grammar.new('grammars/wiresequences.gram'), @bomb)).speak
       return select_module
-    when "reset wire sequences"
-      Speech.new(WireSequences.reset_wire_sequences(@bomb)).speak
-      return select_module
     when "defuse words"
       Speech.new(Words.solve_1(Pocketsphinx::Configuration::Grammar.new('grammars/words1.gram'))).speak
       return select_module
@@ -62,6 +60,27 @@ def select_module
     when "defuse maze"
       Mazes.prompt_mazes
       return select_module
+    when "defuse password"
+      Speech.new(Passwords.prompt_user(@bomb)).speak
+      return select_module
+
+    when "reset wire sequences"
+      @bomb.wire_sequences_red_count = 0
+      @bomb.wire_sequences_blue_count = 0
+      @bomb.wire_sequences_black_count = 0
+      Speech.new("Wire sequences reset.").speak
+      return select_module
+    when "reset password"
+      @bomb.password_columns = { 1=>[], 2=>[], 3=>[], 4=>[], 5=>[] }
+      Speech.new("Passwords reset.").speak
+      return select_module
+    when "reset memory"
+      @bomb.memory_round = 1
+      @bomb.memory_positions = {}
+      @bomb.memory_labels = {}
+      Speech.new("Memory reset.").speak
+      return select_module
+
     when "the bomb is defused", "we did it"
       Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
       return select_module

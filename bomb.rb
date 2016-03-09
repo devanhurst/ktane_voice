@@ -13,6 +13,7 @@ class Bomb
   attr_accessor :wire_sequences_red_count
   attr_accessor :wire_sequences_blue_count
   attr_accessor :wire_sequences_black_count
+  attr_accessor :password_columns
 
   def initialize
     @vowel = nil
@@ -28,6 +29,7 @@ class Bomb
     @wire_sequences_black_count = 0
     @wire_sequences_blue_count = 0
     @wire_sequences_red_count = 0
+    @password_columns = { 1=>[], 2=>[], 3=>[], 4=>[], 5=>[] }
   end
 
   def vowel_check(response)
