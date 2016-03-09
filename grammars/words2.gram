@@ -1,4 +1,4 @@
 #JSGF V1.0;
 
 grammar words2;
-public <command> = the word is ( ready | first | no | blank | nothing | yes | what statement | u h h h | left | right | middle | okay | you word | you are words | your possessive | you're contraction | u r letters | u letter | uh huh | staccato | what question | done | next | hold | sure | like );
+public <command> = the word is ( ready | first | no | blank | nothing | yes | what statement | u h h h | left | right | middle | okay | wait | press | you word | you are words | your possessive | you're contraction | u r letters | u letter | uh huh | staccato | what question | done | next | hold | sure | like );

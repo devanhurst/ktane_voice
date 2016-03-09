@@ -205,15 +205,21 @@ module Mazes
     Speech.new("Second circle?").speak
     circle_two = parse_input(recognize_input)
     maze = determine_maze(circle_one, circle_two)
-    Speech.new("White square?").speak
-    startpoint = parse_input(recognize_input)
-    Speech.new("Red triangle?").speak
-    endpoint = parse_input(recognize_input)
-    return traverse(maze, startpoint[0], startpoint[1], endpoint[0], endpoint[1])
+    if maze
+      Speech.new("White square?").speak
+      startpoint = parse_input(recognize_input)
+      Speech.new("Red triangle?").speak
+      endpoint = parse_input(recognize_input)
+      return traverse(maze, startpoint[0], startpoint[1], endpoint[0], endpoint[1])
+    else
+      Speech.new("Invalid.")
+      return prompt_mazes
+    end
   end
 
   def parse_input(input)
     input = input.split(' ')
+    input.delete('next')
     input.each_with_index do |number, index|
       case number
       when 'one'
@@ -242,8 +248,7 @@ module Mazes
         return maze
       end
     end
-    Speech.new("Incorrect.")
-    return prompt_mazes
+    return false
   end
 
   def output_found_path(path)
@@ -257,6 +262,7 @@ module Mazes
         three_directions = ""
       end
     end
+    Speech.new(three_directions).speak
     return
   end
 end

@@ -1,5 +1,5 @@
 #JSGF V1.0;
 
 grammar words2;
-public <command> = <number> <number>;
+public <command> = <number> <number> next;
 <number> = ( one | two | three | four | five | six );
