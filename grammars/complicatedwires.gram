@@ -1,0 +1,4 @@
+#JSGF V1.0;
+
+grammar complicatedwires;
+public <command> = (( nothing | ( red | blue | star | light)*) next* )+ done;

@@ -14,6 +14,8 @@ include Keypads
 include Memory
 include WireSequences
 include Words
+include ComplicatedWires
+include MorseCode
 
 @bomb = Bomb.new
 
@@ -50,12 +52,17 @@ def select_module
     when "defuse words"
       Speech.new(Words.solve_1(Pocketsphinx::Configuration::Grammar.new('grammars/words1.gram'))).speak
       return select_module
+    when "defuse complicated"
+      Speech.new(ComplicatedWires.solve_complicated(Pocketsphinx::Configuration::Grammar.new('grammars/complicatedwires.gram'), @bomb)).speak
+      return select_module
+    when "defuse morse code"
+      Speech.new(MorseCode.prompt_morse_code).speak
     when "the bomb is defused", "we did it"
       Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
-      return
+      return select_module
     when "the bomb detonated", "the bomb blew up"
       Speech.new(["It was all my fault.", "It's not my fault.", "I hope you're proud of yourself."].sample).speak
-      return
+      return select_module
     end
   end
 end
