@@ -1,4 +1,4 @@
 #JSGF V1.0;
 
 grammar words2;
-public <command> = code ( one | zero )* next;
+public <command> = code ( blip | dash )* next;

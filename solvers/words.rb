@@ -3,9 +3,8 @@ module Words
     Speech.new("word").speak
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |word|
       word = word.split("the word is ").last
-      Speech.new(word).speak
       top_left_words = ['you are letters']
-      top_right_words = ['first', 'o k a y', 'c letter']
+      top_right_words = ['first', 'okay', 'c letter']
       middle_left_words = ['yes', 'nothing', 'l e d', 'they are words']
       middle_right_words = ['blank', 'read a book', 'red color', 'you', 'your possessive', "you're contraction", 'their possessive']
       bottom_left_words = ['empty', 'reed instrument', 'leeds england', "they're contraction"]
@@ -66,7 +65,6 @@ module Words
     }
     Pocketsphinx::LiveSpeechRecognizer.new(Pocketsphinx::Configuration::Grammar.new('grammars/words2.gram')).recognize do |word|
       word = word.split("the word is ").last
-      Speech.new(word).speak
       return solutions[word].join('... ')
     end
   end

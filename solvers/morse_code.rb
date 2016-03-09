@@ -43,9 +43,9 @@ module MorseCode
   def parse_morse_code(dot_dash_array)
     dot_dash_array.each_with_index do |word, index|
       case word
-      when "one"
+      when "blip"
         dot_dash_array[index] = "."
-      when "zero"
+      when "dash"
         dot_dash_array[index] = "-"
       end
     end
