@@ -1,4 +1,4 @@
 #JSGF V1.0;
 
 grammar wires;
-public <command> = (( red | blue | white | black | yellow ) wire)*;
+public <command> = (( red | blue | white | black | yellow ) wire)+;
