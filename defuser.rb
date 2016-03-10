@@ -81,6 +81,11 @@ def select_module
       Speech.new("Memory reset.").speak
       return select_module
 
+    when "add a strike"
+      Speech.new('strike added.')
+      @bomb.strikes += 1
+      return select_module
+
     when "the bomb is defused", "we did it"
       Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
       return select_module
