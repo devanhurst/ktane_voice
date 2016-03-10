@@ -5,7 +5,6 @@ module WireSequences
 
   def solve_wire_sequences(configuration, bomb)
     spoken_response = ""
-    Speech.new("Sequence.").speak
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |input|
       puts input
       input.delete('done')

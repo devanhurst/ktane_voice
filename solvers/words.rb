@@ -6,7 +6,7 @@ module Words
       top_left_words = ['you are letters']
       top_right_words = ['first', 'okay', 'c letter']
       middle_left_words = ['yes', 'nothing', 'l e d', 'they are words']
-      middle_right_words = ['blank', 'read a book', 'red color', 'you', 'your possessive', "you're contraction", 'their possessive']
+      middle_right_words = ['blank', 'read a book', 'red color', 'you word', 'your possessive', "you're contraction", 'their possessive']
       bottom_left_words = ['empty', 'reed instrument', 'leeds england', "they're contraction"]
       bottom_right_words = ['display', 'says', 'no', 'lead guitar', 'hold on', 'you are words', 'there location', 'see a movie', 'c word']
 

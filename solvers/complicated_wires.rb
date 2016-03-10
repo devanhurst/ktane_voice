@@ -16,7 +16,6 @@ module ComplicatedWires
   end
 
   def solve_complicated(configuration, bomb)
-    Speech.new("Complicated. Go.").speak
     solution = ""
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |wires|
       wires = wires.split(' ')

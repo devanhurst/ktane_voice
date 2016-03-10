@@ -6,7 +6,7 @@ module Simon
       solution = determine_current_solution(bomb)
       spoken_answer = ""
       sequence.each do |color|
-        spoken_answer += solution[color]
+        spoken_answer += "#{solution[color]} "
       end
       return spoken_answer
     end

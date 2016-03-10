@@ -200,7 +200,7 @@ module Mazes
   end
 
   def prompt_mazes
-    Speech.new("Where is the first circle?").speak
+    Speech.new("First circle?").speak
     circle_one = parse_input(recognize_input)
     Speech.new("Second circle?").speak
     circle_two = parse_input(recognize_input)

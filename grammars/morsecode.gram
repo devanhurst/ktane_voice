@@ -1,4 +1,4 @@
 #JSGF V1.0;
 
-grammar words2;
+grammar morse;
 public <command> = code ( blip | dash )* next;

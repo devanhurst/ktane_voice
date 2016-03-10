@@ -1,5 +1,5 @@
 #JSGF V1.0;
 
-grammar module;
+grammar keypads;
 public <command> = ( um | (key <key>)* );
 <key> = ( balloon | pyramid | lambda | lightning | spaceship | letter h | backward c | letter e | curly fry | white star | question mark | copyright | butt | inkblot | half r | six | paragraph | upside down p | smiley face | trident | c square | black star | snake | hash | a e together | letter n | omega );

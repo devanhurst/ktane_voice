@@ -1,6 +1,5 @@
 module Memory
   def solve_memory(configuration, bomb)
-    Speech.new("Round #{bomb.memory_round}... go").speak
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
       response = response.split(' ')
       response.delete('sequence')

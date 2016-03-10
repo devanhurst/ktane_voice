@@ -16,7 +16,6 @@ module Keypads
   @count = 0
 
   def sanitize_input(configuration)
-    Speech.new("keypads go").speak
     recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
     recognizer.recognize do |symbols|
       puts symbols

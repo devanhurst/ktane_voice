@@ -32,28 +32,34 @@ def select_module
   recognizer.recognize do |speech|
     case speech
     when "bomb check"
-      Speech.new("Go!").speak
+      Speech.new("Check").speak
       Speech.new(Check.check_all(Pocketsphinx::Configuration::Grammar.new('grammars/check.gram'), @bomb)).speak
       return select_module
     when "defuse wires"
+      Speech.new("Wires").speak
       Speech.new(Wires.solve_wires(Pocketsphinx::Configuration::Grammar.new('grammars/wires.gram'), @bomb)).speak
       return select_module
      when "defuse button"
+      Speech.new("Button").speak
       Speech.new(Button.solve_button(Pocketsphinx::Configuration::Grammar.new('grammars/button.gram'), @bomb)).speak
       return select_module
     when "defuse keypads"
+      Speech.new("Keypads").speak
       Speech.new(Keypads.sanitize_input(Pocketsphinx::Configuration::Grammar.new('grammars/keypads.gram'))).speak
       return select_module
     when "defuse memory"
+      Speech.new("Round #{@bomb.memory_round}").speak
       Speech.new(Memory.solve_memory(Pocketsphinx::Configuration::Grammar.new('grammars/memory.gram'), @bomb)).speak
       return select_module
     when "defuse sequence"
+      Speech.new("Sequence").speak
       Speech.new(WireSequences.solve_wire_sequences(Pocketsphinx::Configuration::Grammar.new('grammars/wiresequences.gram'), @bomb)).speak
       return select_module
     when "defuse words"
       Speech.new(Words.solve_1(Pocketsphinx::Configuration::Grammar.new('grammars/words1.gram'))).speak
       return select_module
     when "defuse complicated"
+      Speech.new("Complicated").speak
       Speech.new(ComplicatedWires.solve_complicated(Pocketsphinx::Configuration::Grammar.new('grammars/complicatedwires.gram'), @bomb)).speak
       return select_module
     when "defuse morse code"
@@ -66,9 +72,11 @@ def select_module
       Speech.new(Passwords.prompt_user(@bomb)).speak
       return select_module
     when "defuse simon"
+      Speech.new("Simon").speak
       Speech.new(Simon.solve_simon(Pocketsphinx::Configuration::Grammar.new('grammars/simonsays.gram'), @bomb)).speak
       return select_module
     when "defuse knobs"
+      Speech.new("Knob").speak
       Speech.new(Knobs.solve_knobs(Pocketsphinx::Configuration::Grammar.new('grammars/knobs.gram'))).speak
       return select_module
 

@@ -1,6 +1,6 @@
 #JSGF V1.0;
 
-grammar module;
+grammar button;
 public <command> = ( um | <colour> <label> );
 <colour> = ( red | blue | white | black | yellow );
 <label> = ( abort | detonate | hold | press );

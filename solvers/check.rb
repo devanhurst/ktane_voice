@@ -13,11 +13,10 @@ module Check
         digit = numbers[check[1]]
         if digit % 2 == 0
           bomb.final_digit_odd = false
-          Speech.new("Even").speak
         else
-          bomb.final_digit_odd = true
-          Speech.new("Odd").speak        
+          bomb.final_digit_odd = true   
         end
+        Speech.new(digit.to_s).speak
       when "vowel"
         if check[1] == "yes"
           bomb.vowel = true

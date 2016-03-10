@@ -1,6 +1,5 @@
 module Wires
   def solve_wires(configuration, bomb)
-    Speech.new("wires go").speak
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |wires|
       puts wires
       wires = wires.split(" ")
