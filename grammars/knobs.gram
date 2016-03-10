@@ -1,0 +1,4 @@
+#JSGF V1.0;
+
+grammar knobs;
+public <command> = (down down both down up both | up down both none both down | down both both down none both | up down up none up down | down none none down both down | none none none down both none | both down both up both up | both down both up down none);

@@ -1,5 +1,6 @@
 require 'pocketsphinx-ruby'
 require 'pry'
+require 'ordinator'
 require "espeak"
 include ESpeak
 
@@ -18,6 +19,8 @@ include ComplicatedWires
 include MorseCode
 include Mazes
 include Passwords
+include Simon
+include Knobs
 
 @bomb = Bomb.new
 
@@ -27,7 +30,6 @@ def select_module
   configuration = Pocketsphinx::Configuration::Grammar.new('grammars/module.gram')
   recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
   recognizer.recognize do |speech|
-    puts speech
     case speech
     when "bomb check"
       Speech.new("Go!").speak
@@ -63,6 +65,12 @@ def select_module
     when "defuse password"
       Speech.new(Passwords.prompt_user(@bomb)).speak
       return select_module
+    when "defuse simon"
+      Speech.new(Simon.solve_simon(Pocketsphinx::Configuration::Grammar.new('grammars/simonsays.gram'), @bomb)).speak
+      return select_module
+    when "defuse knobs"
+      Speech.new(Knobs.solve_knobs(Pocketsphinx::Configuration::Grammar.new('grammars/knobs.gram'))).speak
+      return select_module
 
     when "reset wire sequences"
       @bomb.wire_sequences_red_count = 0
@@ -82,8 +90,8 @@ def select_module
       return select_module
 
     when "add a strike"
-      Speech.new('strike added.')
       @bomb.strikes += 1
+      Speech.new("#{Ordinator.convert(@bomb.strikes)} strike").speak
       return select_module
 
     when "the bomb is defused", "we did it"

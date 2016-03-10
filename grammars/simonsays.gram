@@ -1,0 +1,4 @@
+#JSGF V1.0;
+
+grammar simon;
+public <command> = ( red | blue | green | yellow )+ done;
