@@ -26,6 +26,12 @@ reset memory              - resets memory
 ```
 Make sure to run reset commands before solving a second module of the same type.
 
+## Success/Failure Commands
+```
+The bomb is defused. / We did it!        - cue a happy success response
+The bomb detonated. / The bomb blew up.  - cue an upset failure response
+```
+
 ### Bomb Check
 keyword: "Bomb Check"
 
