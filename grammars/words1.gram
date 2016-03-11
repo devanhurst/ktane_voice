@@ -1,4 +1,4 @@
 #JSGF V1.0;
 
 grammar words1;
-public <command> = the word is ( you are letters | first | okay | yes | nothing | l e d | they are words | blank | read a book | red color | you | your possessive | you're contraction | their possessive | they're contraction | empty | reed instrument | leeds england | there location | display | says | no | lead guitar | hold on | you are words | c word | c letter | see a movie );
+public <command> = the word is ( you are letters | first | okay | yes | nothing | l e d | they are words | blank | read a book | red color | you word | your possessive | you're contraction | their possessive | they're contraction | empty | reed instrument | leeds england | there location | display | says | no | lead guitar | hold on | you are words | c word | c letter | see a movie );
