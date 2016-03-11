@@ -224,6 +224,7 @@ alpha foxtrot whiskey quebec tango echo
 note:
 ```
 There is no escape from this module until a password is found. Fix coming soon.
+```
 
 ### On the subject of the Knob
 keyword:
