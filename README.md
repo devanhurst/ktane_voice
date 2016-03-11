@@ -23,6 +23,7 @@ Each module has a keyword to select it from the main menu, then commands that wi
 reset wire sequences      - resets wire sequences
 reset password            - resets password
 reset memory              - resets memory
+```
 Make sure to run reset commands before solving a second module of the same type.
 
 ### Bomb Check
