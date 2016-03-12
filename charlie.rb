@@ -27,7 +27,7 @@ include Knobs
 Speech.new("Ready.").speak
 
 def select_module
-  configuration = Pocketsphinx::Configuration::Grammar.new('grammars/module.gram')
+  configuration = Pocketsphinx::Configuration::Grammar.new('grammars/charlie.gram')
   recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
   recognizer.recognize do |speech|
     case speech
