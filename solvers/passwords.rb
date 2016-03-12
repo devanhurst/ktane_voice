@@ -30,7 +30,12 @@ module Passwords
   end
 
   def prompt_user(bomb)
-    return solve(prompt_column, prompt_input, bomb)
+    column = prompt_column
+    if column
+      return solve(column, prompt_input, bomb)
+    else
+      return "Escaped."
+    end
   end
 
   def prompt_input
@@ -60,6 +65,8 @@ module Passwords
       when 'five'
         Speech.new('5').speak
         return 5
+      when 'escape password'
+        return false
       end
     end
   end
