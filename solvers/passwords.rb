@@ -23,12 +23,17 @@ module Passwords
       possibilities.delete(0)
     end
     if possibilities.count == 1
+      reset_password(bomb)
       return "The password is #{possibilities.first}."
     else
       return prompt_user(bomb)
     end
   end
 
+  def reset_password(bomb)
+    bomb.password_columns = { 1 => [], 2 => [], 3 => [], 4 => [], 5 => [] }
+  end
+  
   def prompt_user(bomb)
     column = prompt_column
     if column

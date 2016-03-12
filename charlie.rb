@@ -88,7 +88,7 @@ def select_module
       Speech.new("Wire sequences reset.").speak
       return select_module
     when "reset password"
-      @bomb.password_columns = { 1=>[], 2=>[], 3=>[], 4=>[], 5=>[] }
+      Passwords.reset_password(@bomb)
       Speech.new("Passwords reset.").speak
       return select_module
     when "reset memory"
