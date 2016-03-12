@@ -1,0 +1,5 @@
+#JSGF V1.0;
+
+grammar module;
+public <command> = ( you pass butter | <defuse> );
+<defuse> = ( defusing | (let's)* defuse ) (( a | this )* bomb)*; 

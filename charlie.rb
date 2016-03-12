@@ -24,14 +24,12 @@ include Knobs
 
 @bomb = Bomb.new
 
-Speech.new("Ready.").speak
-
 def select_module
   configuration = Pocketsphinx::Configuration::Grammar.new('grammars/charlie.gram')
   recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
   recognizer.recognize do |speech|
     case speech
-    when "bomb check"
+    when "charlie bomb check"
       Speech.new("Check").speak
       Speech.new(Check.check_all(Pocketsphinx::Configuration::Grammar.new('grammars/check.gram'), @bomb)).speak
       return select_module
@@ -109,15 +107,36 @@ def select_module
       @bomb.strikes += 1
       Speech.new("#{Ordinator.convert(@bomb.strikes)} strike").speak
       return select_module
+    when "remove a strike"
+      if @bomb.strikes > 0
+        @bomb.strikes -= 1
+        Speech.new("Strike removed").speak
+        return select_module
+      end
 
-    when "the bomb is defused", "we did it"
-      Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!"].sample).speak
+    when "charlie the bomb is defused", "charlie we did it", "charlie we're done"
+      Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!", "What a relief.", "Thank goodness.", "Congratulations!", "You deserve a drink."].sample).speak
       return select_module
-    when "the bomb detonated", "the bomb blew up"
-      Speech.new(["It was all my fault.", "It's not my fault.", "I hope you're proud of yourself."].sample).speak
+    when "charlie the bomb detonated", "charlie it detonated", "charlie the bomb blew up", "charlie it blew up", "charlie we lost"
+      Speech.new(["It was all my fault.", "It's not your fault", "It's not my fault.", "I hope you're proud of yourself.", "This can't be happening!"].sample).speak
       return select_module
     end
   end
 end
 
-select_module
+Speech.new("My name is Charlie. What is my purpose?").speak
+config = Pocketsphinx::Configuration::Grammar.new('grammars/charliepurpose.gram')
+Pocketsphinx::LiveSpeechRecognizer.new(config).recognize do |purpose|
+  case purpose
+  when "you pass butter"
+    Speech.new("i").speak
+    Speech.new("...").speak
+    Speech.new("i").speak
+    Speech.new("...").speak
+    Speech.new("Oh my god.").speak
+    break
+  else
+    Speech.new(["Ready.", "Let's roll.", "Let's do this.", "Let's play."].sample).speak
+    return select_module
+  end
+end

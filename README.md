@@ -23,26 +23,6 @@ Currently, the bomb check MUST be done first. If a module requiring bomb paramet
 ## Modules
 Each module has a keyword to select it from the main menu, then commands that will give the bot the appropriate data to solve the module.
 
-## Reset Commands
-```
-reset wire sequences      - resets wire sequences
-reset morse code          - resets morse code
-reset password            - resets password
-reset memory              - resets memory
-```
-Upon successful completion of these modules, they reset automatically. It isn't necessary to run these commands unless an error was made.
-
-## Undo Commands
-```
-undo last wire sequence    - removes the previous spoken wire sequence command
-```
-
-## Success/Failure Commands
-```
-The bomb is defused. / We did it!        - cue a happy success response
-The bomb detonated. / The bomb blew up.  - cue an upset failure response
-```
-
 ### Bomb Check
 keyword: "Bomb Check"
 
@@ -255,4 +235,29 @@ From left to right, say the sequence of light combinations.
 example:
 ```
 up down both none both down (UP)
+```
+### Adding Strikes
+On the main menu:
+```
+add a strike
+```
+
+### Reset Commands
+```
+reset wire sequences      - resets wire sequences
+reset morse code          - resets morse code
+reset password            - resets password
+reset memory              - resets memory
+```
+Upon successful completion of these modules, they reset automatically. It isn't necessary to run these commands unless an error was made.
+
+### Undo Commands
+```
+undo last wire sequence    - removes the previous spoken wire sequence command
+```
+
+### Success/Failure Commands
+```
+The bomb is defused. / We did it!        - cue a happy success response
+The bomb detonated. / The bomb blew up.  - cue an upset failure response
 ```
