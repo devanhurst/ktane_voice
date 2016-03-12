@@ -102,6 +102,11 @@ def select_module
       Speech.new("Morse reset.")
       return select_module
 
+    when "undo last wire sequence"
+      WireSequences.undo_wire_sequence(@bomb)
+      Speech.new("Sequence undone").speak
+      return select_module
+
     when "add a strike"
       @bomb.strikes += 1
       Speech.new("#{Ordinator.convert(@bomb.strikes)} strike").speak

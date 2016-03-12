@@ -1,8 +1,9 @@
 #JSGF V1.0;
 
 grammar module;
-public <command> = ( uh | bomb check | defuse <module> | add a strike | <success> | <failure> | reset <resettable> );
+public <command> = ( uh | bomb check | defuse <module> | add a strike | <success> | <failure> | reset <resettable> | undo last <undoable> );
 <module> = ( wires | button | keypads | simon | words | memory | morse code | complicated | sequence | maze | password | knobs );
 <resettable> = ( memory | wire sequences | password );
+<undoable> = ( wire sequence );
 <success> = (the bomb is defused | we did it);
 <failure> = the bomb (detonated | blew up);

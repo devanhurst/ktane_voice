@@ -8,9 +8,11 @@ module WireSequences
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |input|
       puts input
       input.delete('done')
+      moves = []
       input.split("next").each do |pair|
         pair.strip!
         pair = pair.split(" ")
+        moves << pair[0]
         case pair[0]
         when 'red'
           if @red_sequence[bomb.wire_sequences_red_count].include?(pair[1])
@@ -35,12 +37,26 @@ module WireSequences
           bomb.wire_sequences_black_count += 1
         end
       end
+      bomb.wire_sequences_moves << moves
       if bomb.wire_sequences_black_count + bomb.wire_sequences_red_count + bomb.wire_sequences_blue_count == 9
         bomb.wire_sequences_blue_count = 0
         bomb.wire_sequences_black_count = 0
         bomb.wire_sequences_red_count = 0
       end
       return spoken_response
+    end
+  end
+
+  def undo_wire_sequence(bomb)
+    bomb.wire_sequences_moves.pop.each do |colour|
+      case colour
+      when 'red'
+        bomb.wire_sequences_red_count -= 1
+      when 'blue'
+        bomb.wire_sequences_blue_count -= 1
+      when 'black'
+        bomb.wire_sequences_black_count -= 1
+      end
     end
   end
 

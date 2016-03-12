@@ -13,6 +13,7 @@ class Bomb
   attr_accessor :wire_sequences_red_count
   attr_accessor :wire_sequences_blue_count
   attr_accessor :wire_sequences_black_count
+  attr_accessor :wire_sequences_moves
   attr_accessor :password_columns
   attr_accessor :morse_characters
 
@@ -30,6 +31,7 @@ class Bomb
     @wire_sequences_black_count = 0
     @wire_sequences_blue_count = 0
     @wire_sequences_red_count = 0
+    @wire_sequences_moves = []
     @password_columns = { 1=>[], 2=>[], 3=>[], 4=>[], 5=>[] }
     @morse_characters = []
   end
