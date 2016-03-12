@@ -63,7 +63,8 @@ def select_module
       Speech.new(ComplicatedWires.solve_complicated(Pocketsphinx::Configuration::Grammar.new('grammars/complicatedwires.gram'), @bomb)).speak
       return select_module
     when "defuse morse code"
-      Speech.new(MorseCode.prompt_morse_code).speak
+      Speech.new("letter.").speak
+      Speech.new(MorseCode.prompt_morse_code(@bomb)).speak
       return select_module
     when "defuse maze"
       Mazes.prompt_mazes
@@ -95,6 +96,10 @@ def select_module
       @bomb.memory_positions = {}
       @bomb.memory_labels = {}
       Speech.new("Memory reset.").speak
+      return select_module
+    when "reset morse code"
+      @bomb.morse_characters = []
+      Speech.new("Morse reset.")
       return select_module
 
     when "add a strike"

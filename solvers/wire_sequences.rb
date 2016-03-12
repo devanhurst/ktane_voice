@@ -35,7 +35,11 @@ module WireSequences
           bomb.wire_sequences_black_count += 1
         end
       end
-      puts 'response:' + spoken_response
+      if bomb.wire_sequences_black_count + bomb.wire_sequences_red_count + bomb.wire_sequences_blue_count == 9
+        bomb.wire_sequences_blue_count = 0
+        bomb.wire_sequences_black_count = 0
+        bomb.wire_sequences_red_count = 0
+      end
       return spoken_response
     end
   end

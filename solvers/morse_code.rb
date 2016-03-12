@@ -1,5 +1,4 @@
 module MorseCode
-  @entered_characters = []
   @solutions = {"shell" => "3.505", "halls" => "3.515", "slick" => "3.522",
                 "trick" => "3.532", "boxes" => "3.535", "leaks" => "3.542",
                 "strobe" => "3.545", "bistro" => "3.552", "flick" => "3.555",
@@ -7,10 +6,10 @@ module MorseCode
                 "steak" => "3.582", "sting" => "3.592", "vector" => "3.595",
                 "beats" => "3.600"}
 
-  def solve_morse_code(entered_characters)
+  def solve_morse_code(bomb)
     possible_answers = []
     @solutions.each do |solution|
-      @entered_characters.each do |character|
+      bomb.morse_characters.each do |character|
         if solution[0].include?(character) == false
           possible_answers.delete(solution[1])
           break
@@ -19,31 +18,33 @@ module MorseCode
       end
     end
     if possible_answers.uniq.count == 1
-      @entered_characters = []
+      bomb.morse_characters = []
       return "ANSWER... #{possible_answers.first}"
     else
-      return prompt_morse_code
+      return prompt_morse_code(bomb)
     end
   end
 
-  def prompt_morse_code
-    Speech.new("Letter.").speak
+  def prompt_morse_code(bomb)
     configuration = Pocketsphinx::Configuration::Grammar.new('grammars/morsecode.gram')
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |morse|
-      morse = morse.split(' ')
-      morse.delete('code')
-      morse.delete('next')
-      letter = parse_morse_code(morse)
-      Speech.new(letter).speak
-      @entered_characters.push(letter)
-      return solve_morse_code(@entered_characters)
+      if morse == "escape morse code"
+        return "Escaped."
+      else
+        morse = morse.split(' ')
+        morse.delete('next')
+        letter = parse_morse_code(morse)
+        Speech.new(letter).speak
+        bomb.morse_characters.push(letter)
+        return solve_morse_code(bomb)
+      end
     end
   end
 
   def parse_morse_code(dot_dash_array)
     dot_dash_array.each_with_index do |word, index|
       case word
-      when "blip"
+      when "beep"
         dot_dash_array[index] = "."
       when "dash"
         dot_dash_array[index] = "-"
