@@ -120,23 +120,21 @@ def select_module
     when "charlie the bomb detonated", "charlie it detonated", "charlie the bomb blew up", "charlie it blew up", "charlie we lost"
       Speech.new(["It was all my fault.", "It's not your fault", "It's not my fault.", "I hope you're proud of yourself.", "This can't be happening!"].sample).speak
       return select_module
+
+    when "charlie pass the butter"
+      Speech.new("What is my purpose?").speak
+      c = Pocketsphinx::Configuration::Grammar.new('grammars/charliepurpose.gram')
+      Pocketsphinx::LiveSpeechRecognizer.new(c).recognize do |r|
+        Speech.new("i").speak
+        Speech.new("...").speak
+        Speech.new("i...").speak
+        Speech.new("Oh my god.").speak
+        return select_module
+      end
     end
   end
 end
 
-Speech.new("My name is Charlie. What is my purpose?").speak
-config = Pocketsphinx::Configuration::Grammar.new('grammars/charliepurpose.gram')
-Pocketsphinx::LiveSpeechRecognizer.new(config).recognize do |purpose|
-  case purpose
-  when "you pass butter"
-    Speech.new("i").speak
-    Speech.new("...").speak
-    Speech.new("i").speak
-    Speech.new("...").speak
-    Speech.new("Oh my god.").speak
-    break
-  else
-    Speech.new(["Ready.", "Let's roll.", "Let's do this.", "Let's play."].sample).speak
-    return select_module
-  end
-end
+Speech.new("My name is Charlie.").speak
+Speech.new(["Ready.", "Let's roll.", "Let's do this.", "Let's play."].sample).speak
+select_module
