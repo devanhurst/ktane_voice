@@ -3,10 +3,15 @@
 ## Installation
 Compatible with all operating systems that can run a ruby environment.
 
+### OSX
 ```
 bundle
 ruby charlie.rb
 ```
+
+### Other
+Same as above, but pocketsphinx-ruby's dependencies (Pocketsphinx and CMUSphinx) are not included. More detailed instructions to come.
+
 
 ## Development Notes
 Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by Carnegie Mellon University.
