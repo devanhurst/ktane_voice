@@ -92,7 +92,16 @@ module Memory
       bomb.memory_labels[bomb.memory_round] = label
       bomb.memory_positions[bomb.memory_round] = position
       bomb.memory_round += 1
+      if bomb.memory_round == 6
+        reset_memory(bomb)
+      end
       return "Press... #{label}"
     end
+  end
+
+  def reset_memory(bomb)
+    bomb.memory_round = 1
+    bomb.memory_positions = {}
+    bomb.memory_labels = {}
   end
 end

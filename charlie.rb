@@ -92,9 +92,7 @@ def select_module
       Speech.new("Passwords reset.").speak
       return select_module
     when "reset memory"
-      @bomb.memory_round = 1
-      @bomb.memory_positions = {}
-      @bomb.memory_labels = {}
+      Memory.reset_memory(@bomb)
       Speech.new("Memory reset.").speak
       return select_module
     when "reset morse code"

@@ -26,10 +26,16 @@ Each module has a keyword to select it from the main menu, then commands that wi
 ## Reset Commands
 ```
 reset wire sequences      - resets wire sequences
+reset morse code          - resets morse code
 reset password            - resets password
 reset memory              - resets memory
 ```
-Make sure to run reset commands before solving a second module of the same type.
+Upon successful completion of these modules, they reset automatically. It isn't necessary to run these commands unless an error was made.
+
+## Undo Commands
+```
+undo last wire sequence    - removes the previous spoken wire sequence command
+```
 
 ## Success/Failure Commands
 ```
