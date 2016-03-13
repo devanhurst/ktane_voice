@@ -1,4 +1,5 @@
 #JSGF V1.0;
 
 grammar morse;
-public <command> = ((( beep | dash )* next) | escape morse code);
+public <command> = ( <morse> next | escape morse code);
+<morse> = ( dot dash | dash dot dot dot | dash dot dash dot | dash dot dot | dot | dot dot dash dot | dash dash dot | dot dot dot dot | dot dot | dot dash dash dash | dash dot dash | dot dash dot dot | dash dash | dash dot | dash dash dash | dot dash dash dot | dash dash dot dash | dot dash dot | dot dot dot | dash | dot dot dash | dot dot dot dash | dot dash dash | dash dot dot dash | dash dot dash dash | dash dash dot dot );

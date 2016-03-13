@@ -36,99 +36,102 @@ class Bomb
     @morse_characters = []
   end
 
-  def vowel_check(response)
-    puts "Vowel?"
-    if @vowel == nil
-      if response == "yes"
+  def spontaneous_vowel_check
+    Speech.new("Is there a vowel?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/binarycheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      if response == 'yes'
+        Speech.new("Vowel").speak
         @vowel = true
-      elsif response == "no"
+      elsif response == 'no'
+        Speech.new("No vowel.").speak
         @vowel = false
       end
+      return
     end
   end
 
-  def final_digit_check
-    puts "Final digit?"
-    if @final_digit_odd == nil
-      if gets.chomp.to_i % 2 == 0
-        @final_digit_odd = false
-      else
+  def spontaneous_final_digit_check
+    Speech.new("What is the final digit?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/numbercheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      case response
+      when 'one', 'three', 'five', 'nine'
+        Speech.new("Odd").speak
         @final_digit_odd = true
+      else
+        Speech.new("Even").speak
+        @final_digit_odd = false
       end
+      return
     end
   end
 
-  def batteries_check
-    puts "No. of batteries?"
-    if @battery_count == nil
-      puts "How many batteries are on the bomb?"
-      @battery_count = gets.chomp.to_i
+  def spontaneous_batteries_check
+    Speech.new("How many batteries?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/numbercheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      case response
+      when 'zero'
+        @battery_count = 0
+      when 'one'
+        @battery_count = 1
+      when 'two'
+        @battery_count = 2
+      when 'three'
+        @battery_count = 3
+      when 'four'
+        @battery_count = 4
+      when 'five', 'six', 'seven', 'eight', 'nine'
+        @battery_count = 5
+      end
+      Speech.new(response).speak
+      return
     end
   end
 
-  def indicator_car_check
-    if @indicator_car == nil
-      puts "Is there a lit CAR indicator? (y/n)"
-      response = gets.chomp
-      if response == "y"
+  def spontaneous_indicator_car_check
+    Speech.new("Is there a lit car indicator?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/binarycheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      if response == 'yes'
+        Speech.new('car').speak
         @indicator_car = true
-      elsif response == "n"
+      elsif response == 'no'
+        Speech.new('no car').speak
         @indicator_car = false
-      else
-        puts "Invalid input."
-        indicator_car_check
       end
+      return
     end
   end
 
-  def indicator_frk_check
-    if @indicator_frk == nil
-      puts "Is there a lit FRK indicator? (y/n)"
-      response = gets.chomp
-      if response == "y"
+  def spontaneous_indicator_frk_check
+    Speech.new("Is there a lit freak indicator?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/binarycheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      if response == 'yes'
+        Speech.new('freak').speak
         @indicator_frk = true
-      elsif response == "n"
+      elsif response == 'no'
+        Speech.new('no freak').speak
         @indicator_frk = false
-      else
-        puts "Invalid input."
-        indicator_frk_check
       end
+      return
     end
   end
 
-  def parallel_port_check
-    if @parallel_port == nil
-      puts "Is there a parallel port on the bomb? (y/n)"
-      response = gets.chomp
-      if response == "y"
+  def spontaneous_parallel_port_check
+    Speech.new("Is there a parallel port?").speak
+    configuration = Pocketsphinx::Configuration::Grammar.new('grammars/binarycheck.gram')
+    Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |response|
+      if response == 'yes'
+        Speech.new('parallel port').speak
         @parallel_port = true
-      elsif response == "n"
+      elsif response == 'no'
+        Speech.new('no parallel port').speak
         @parallel_port = false
-      else
-        puts "Invalid input."
-        parallel_port_check
       end
+      return
     end
   end
-
-  def strike_added?(text_input)
-    if text_input == 'X'
-      @strikes += 1
-      puts "STRIKE ADDED. STRIKES: " + @strikes.to_s
-      sleep(1)
-      return true
-    else
-      return false
-    end
-  end
-
-  def back_to_menu
-    puts "Press enter to return to menu."
-    if gets.chomp == ""
-      load('./menu.rb')
-    else
-      back_to_menu
-    end
-  end
-
 end

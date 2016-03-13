@@ -33,6 +33,7 @@ module MorseCode
       else
         morse = morse.split(' ')
         morse.delete('next')
+        morse.delete('morse')
         letter = parse_morse_code(morse)
         Speech.new(letter).speak
         bomb.morse_characters.push(letter)
@@ -44,7 +45,7 @@ module MorseCode
   def parse_morse_code(dot_dash_array)
     dot_dash_array.each_with_index do |word, index|
       case word
-      when "beep"
+      when "dot"
         dot_dash_array[index] = "."
       when "dash"
         dot_dash_array[index] = "-"

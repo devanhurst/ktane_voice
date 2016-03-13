@@ -1,6 +1,6 @@
 #JSGF V1.0;
 
 grammar button;
-public <command> = ( um | <colour> <label> );
-<colour> = ( red | blue | white | black | yellow );
+public <command> = ( um | <colour> <label> | <label> <colour> );
+<colour> = ( red | blue | white | yellow );
 <label> = ( abort | detonate | hold | press );

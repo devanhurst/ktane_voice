@@ -95,7 +95,7 @@ def select_module
       return select_module
     when "reset morse code"
       @bomb.morse_characters = []
-      Speech.new("Morse reset.")
+      Speech.new("Morse reset.").speak
       return select_module
 
     when "undo last wire sequence"
@@ -121,16 +121,16 @@ def select_module
       Speech.new(["It was all my fault.", "It's not your fault", "It's not my fault.", "I hope you're proud of yourself.", "This can't be happening!"].sample).speak
       return select_module
 
-    when "charlie pass the butter"
-      Speech.new("What is my purpose?").speak
-      c = Pocketsphinx::Configuration::Grammar.new('grammars/charliepurpose.gram')
-      Pocketsphinx::LiveSpeechRecognizer.new(c).recognize do |r|
-        Speech.new("i").speak
-        Speech.new("...").speak
-        Speech.new("i...").speak
-        Speech.new("Oh my god.").speak
-        return select_module
-      end
+    # when "charlie what is your purpose"
+    #   Speech.new("I defuse bombs.").speak
+    #   c = Pocketsphinx::Configuration::Grammar.new('grammars/charliepurpose.gram')
+    #   Pocketsphinx::LiveSpeechRecognizer.new(c).recognize do |r|
+    #     Speech.new("i").speak
+    #     Speech.new("...").speak
+    #     Speech.new("i...").speak
+    #     Speech.new("Oh my god.").speak
+    #     return select_module
+    #   end
     end
   end
 end

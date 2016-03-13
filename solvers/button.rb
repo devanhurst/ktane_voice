@@ -7,19 +7,42 @@ module Button
 
       if word == "abort" && colour == "blue"
         return hold_button
-      elsif word == "detonate" && bomb.battery_count > 1
-        return press_button        
-      elsif colour == "white" && bomb.indicator_car == true
-        return hold_button
-      elsif bomb.indicator_frk == true && bomb.battery_count > 2
+      end
+
+      if word == "detonate" && bomb.battery_count == nil
+        bomb.spontaneous_batteries_check
+      end
+      if word == "detonate" && bomb.battery_count > 1
         return press_button
-      elsif colour == "yellow"
-        return hold_button
-      elsif word == "hold" && colour == "red"
-        return press_button
-      else
+      end        
+      
+      if colour == "white" && bomb.indicator_car == nil
+        bomb.spontaneous_indicator_car_check
+      end
+      if colour == "white" && bomb.indicator_car == true
         return hold_button
       end
+      
+      if bomb.indicator_frk == nil
+        bomb.spontaneous_indicator_frk_check
+      end
+      if bomb.battery_count == nil
+        bomb.spontaneous_batteries_check
+      end            
+      if bomb.indicator_frk == true && bomb.battery_count > 2
+        return press_button
+      end
+      
+      if colour == "yellow"
+        return hold_button
+      end
+
+      if word == "hold" && colour == "red"
+        return press_button
+      end
+      
+      return hold_button
+      
     end
   end
 

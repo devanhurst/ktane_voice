@@ -1,5 +1,8 @@
 module Simon
   def solve_simon(configuration, bomb)
+    if bomb.vowel == nil
+      bomb.spontaneous_vowel_check
+    end
     Pocketsphinx::LiveSpeechRecognizer.new(configuration).recognize do |colors|
       sequence = colors.split(' ')
       sequence.delete('done')

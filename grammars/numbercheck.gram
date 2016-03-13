@@ -1,0 +1,4 @@
+#JSGF V1.0;
+
+grammar check;
+public <command> = ( one | two | three | four | five | six | seven | eight | nine | zero );
