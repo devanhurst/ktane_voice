@@ -17,7 +17,9 @@ module Wires
           return "CUT THE LAST WIRE"
         end
       when 4
-        bomb.final_digit_check
+        if wires.count("red") > 1 && bomb.final_digit_odd == nil
+          bomb.spontaneous_final_digit_check
+        end
         if wires.count("red") > 1 && bomb.final_digit_odd == true
           return "CUT THE LAST WIRE"
         elsif wires.last == "yellow" && wires.count("red") == 0
@@ -30,8 +32,10 @@ module Wires
           return "CUT THE SECOND WIRE"
         end
       when 5
-        bomb.final_digit_check
-        if wires.last == "k" && bomb.final_digit_odd == true
+        if wires.last == "black" && bomb.final_digit_odd == nil
+          bomb.spontaneous_final_digit_check
+        end 
+        if wires.last == "black" && bomb.final_digit_odd == true
           return "CUT THE FOURTH WIRE"
         elsif wires.count("red") == 1 && wires.count("y") > 1
           return "CUT THE FIRST WIRE"
@@ -41,7 +45,9 @@ module Wires
           return "CUT THE FIRST WIRE"
         end
       when 6
-        bomb.final_digit_check
+        if wires.count("yellow") == 0 && bomb.final_digit_odd == nil
+          bomb.spontaneous_final_digit_check
+        end
         if wires.count("yellow") == 0 && bomb.final_digit_odd == true
           return "CUT THE THIRD WIRE"
         elsif wires.count("yellow") == 1 && wires.count("yellow") > 1
