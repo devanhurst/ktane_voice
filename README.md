@@ -18,7 +18,7 @@ Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by
 
 Text-to-speech incorporates espeak.
 
-Currently, the bomb check MUST be done first. If a module requiring bomb parameters is selected, the app will crash. Soon it will prompt you for missing data when it's needed; I'm still porting this feature from the text-based defuser.
+The bomb will prompt you for bomb variables the first time that they're necessary. It's recommended when playing expert bombs, however, to say "charlie bomb check" at the beginning of the game to get them all out of the way.
 
 ## Modules
 Each module has a keyword to select it from the main menu, then commands that will give the bot the appropriate data to solve the module.
