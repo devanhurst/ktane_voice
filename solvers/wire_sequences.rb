@@ -19,7 +19,7 @@ module WireSequences
             spoken_response += "YES... "
           else
             spoken_response += "NO... "
-          end 
+          end
           bomb.wire_sequences_red_count += 1
         when 'blue'
           if @blue_sequence[bomb.wire_sequences_blue_count].include?(pair[1])
