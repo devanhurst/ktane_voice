@@ -1,16 +1,18 @@
 # Charlie: A Keep Talking and Nobody Explodes AI Partner
 
 ## Installation
-Compatible with all operating systems that can run a ruby environment. The instructions below work for OSX, but may not work for your OS of choice. Feel free to leave an issue ticket!
 
-You'll need your ruby environment set up first. Specifically, you'll need Ruby, Bundler, and Homebrew.
+Regardless of your operating system, you'll need your ruby environment set up first. Specifically, you'll need Ruby and Bundler.
+
+### OSX
+Install homebrew.
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 Next, install pocketsphinx-ruby's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
-
 ```
 $ brew tap watsonbox/cmu-sphinx
 $ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
-$ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxtrain
 $ brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
 ```
 
@@ -39,7 +41,23 @@ You should now be able to launch Charlie.
 $ ruby charlie.rb
 ```
 
-Have fun!!
+### Windows (Untested)
+Download and install Pocketsphinx, Sphinxbase, and Espeak from the 3 links below.
+https://sourceforge.net/projects/cmusphinx/files/pocketsphinx/5prealpha/
+https://sourceforge.net/projects/cmusphinx/files/sphinxbase/5prealpha/
+http://espeak.sourceforge.net/download.html
+
+Then, navigate to the ktane_voice folder and run the following command:
+```
+$ bundle
+```
+
+You should now be able to launch Charlie.
+```
+$ ruby charlie.rb
+```
+
+Have fun!! Please leave issue tickets if these instructions don't work for you! :)
 
 ## Development Notes
 Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by Carnegie Mellon University.
