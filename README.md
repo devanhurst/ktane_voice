@@ -6,7 +6,8 @@ Regardless of your operating system, you'll need your ruby environment set up fi
 
 ### OSX
 Install homebrew.
-```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Next, install pocketsphinx-ruby's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
