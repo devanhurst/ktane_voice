@@ -260,6 +260,7 @@ cee       --  cee word
 ```
 
 ###### Button Words
+```
 ready    --  ready
 first    --  first
 no       --  no
@@ -288,7 +289,7 @@ next     --  next
 hold     --  hold
 sure     --  sure
 like     --  like
-
+```
 
 ### On the subject of Passwords
 KEYWORD
