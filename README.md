@@ -27,7 +27,7 @@ Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
 those kegs to fail to run properly once built. Run `brew link` on these:
     portaudio
 ```
-If you see this error, follow the instructions to link portaudio.
+If you see this error, run ```brew link portaudio``` to fix it.
 
 Finally, navigate to the ktane_voice folder and run the following command:
 ```
@@ -64,29 +64,29 @@ parallel port (yes/no) - Parallel port
 ```
 
 ### On the subject of Wires
-keyword:
+#####keyword:
 ```
 defuse wires
 ```
-usage:
+#####usage:
 ```
 ((black/blue/red/white/yellow) wire) [repeat]
 ```
-example:
+#####example:
 ```
 black wire blue wire white wire
 ```
 
 ### On the subject of Keypads
-keyword:
+#####keyword:
 ```
 defuse keypads
 ```
-usage:
+#####usage:
 ```
 Say the list of keypads, prefixing each with the word 'key'.
 ```
-example:
+#####example:
 ```
 key inkblot, key six, key spaceship, key paragraph
 ```
@@ -94,86 +94,86 @@ key inkblot, key six, key spaceship, key paragraph
 List coming soon.
 
 ### On the subject of the Button
-keyword:
+#####keyword:
 ```
 defuse button
 ```
-usage:
+#####usage:
 ```
 Say the color, then the word. If the button is held, say the colour of the stripe.
 ```
-example:
+#####example:
 ```
 red abort... (HOLD THE BUTTON. STRIPE COLOUR?)... yellow
 ```
 
 ### On the subject of Simon Says
-keyword:
+#####keyword:
 ```
 defuse simon
 ```
-usage:
+#####usage:
 ```
 Say the light colour sequence, followed by 'done'.
 ```
-example:
+#####example:
 ```
 red blue green green yellow done
 ```
 
 ### On the subject of Complicated Wires
-keyword:
+#####keyword:
 ```
 defuse complicated
 ```
-usage:
+#####usage:
 ```
 Say the combination of attributes (red, blue, star, light) in any order, followed by 'next' to move to the next wire, and done to finish.
 ```
-example:
+#####example:
 ```
 red blue star, next, nothing, next, blue, next, red light blue, done
 ```
 
 ### On the subject of Wire Sequences
-keyword:
+#####keyword:
 ```
 defuse sequence
 ```
-usage:
+u#####sage:
 ```
 From top to bottom, say the colour, then the the letter (Alpha, Bravo, Charlie) that it is connected to. Say 'next' to move to the next wire, 'done' to finish. Cut accordingly.
 ```
-example:
+#####example:
 ```
 red bravo next, red charlie next, black alpha done
 ```
 
 ### On the subject of Memory
-keyword:
+#####keyword:
 ```
 defuse memory
 ```
-usage:
+#####usage:
 ```
 Say 'sequence', followed by the sequence of numbers, starting with the display number and working from left to right. The keyword must be repeated for each round.
 ```
-example:
+#####example:
 ```
 defuse memory (ROUND ONE) sequence 3 2 4 3 1
 defuse memory (ROUND TWO) sequence 2 2 1 3 4
 ```
 
 ### On the subject of Mazes
-keyword:
+#####keyword:
 ```
 defuse mazes
 ```
-usage:
+#####usage:
 ```
 With the top-left coordinate as (1,1); the bottom right as (6,6), give the locations requested. The circles can be given in either order. (x, y)
 ```
-example:
+#####example:
 ```
 (FIRST CIRCLE?)
 1 1
@@ -193,42 +193,102 @@ O * * * * *
 ```
 
 ### On the subject of Morse Code
-keyword:
+#####keyword:
 ```
 defuse morse code
 ```
-usage:
+#####usage:
 ```
 Say the combination of 'dot' and 'dash', then 'next'. Really enunciate the difference between 'dot' and 'dash'.
 ```
-example:
+#####example:
 ```
 dot dot dot next (S)
 ```
-note:
+#####note:
 ```
 The letters can be spoken in any order. If you believe an error was made, 'escape morse code', 'reset morse code', then start over by saying 'defuse morse code'.
 ```
 
 ### On the subject of Who's on First?
-keyword:
+#####keyword:
 ```
 defuse words
 ```
-usage:
+#####usage:
 ```
 Say the word in the display. The bot will give you a position. Say the word in that position. The bot will read you a list of words; press the first one you hear that is a button label.
 ```
-example:
+#####example:
 ```
 The word is YES.
 (MIDDLE-LEFT)
 The word is NEXT.
 ```
-note:
+#####Word List
+
+Display words
 ```
-Many words have nicknames. I'll post the list here soon; read the source code for now.
+you are   --  you are words
+first     --  first
+okay      --  okay
+c         --  c letter
+yes       --  yes
+nothing   --  nothing
+led       --  L E D
+they are  --  they are words
+blank     --  blank
+read      --  read a book
+red       --  red color
+you       --  you word
+your      --  your possessive
+you're    --  you're contraction
+their     --  their possessive
+_____     --  empty
+reed      --  reed instrument
+leed      --  leeds england
+they're   --  they're contraction
+display   --  display
+says      --  says
+no        --  no
+lead      --  lead guitar
+hold on   --  hold on
+you are   --  you are words
+there     --  there location
+see       --  see a movie
+cee       --  cee word
 ```
+
+##### Button Words
+ready    --  ready
+first    --  first
+no       --  no
+blank    --  blank
+nothing  --  nothing
+yes      --  yes
+what     --  what statement
+what?    --  what question
+uhhh     --  U H H H
+left     --  left
+right    --  right
+middle   --  middle
+okay     --  okay
+wait     --  wait
+press    --  press
+you      --  you word
+you are  --  you are words
+your     --  your possessive
+you're   --  you're contraction
+u r      --  u r letters
+u        --  u letter
+uh huh   --  uh huh
+uh uh    --  staccato
+done     --  done
+next     --  next
+hold     --  hold
+sure     --  sure
+like     --  like
+
 
 ### On the subject of Passwords
 keyword:
