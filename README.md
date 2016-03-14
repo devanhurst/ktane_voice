@@ -5,13 +5,19 @@ Compatible with all operating systems that can run a ruby environment. The instr
 
 You'll need your ruby environment set up first. Specifically, you'll need Ruby, Bundler, and Homebrew.
 
-Next, install Pocketsphinx's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
+Next, install pocketsphinx-ruby's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
 
 ```
 $ brew tap watsonbox/cmu-sphinx
 $ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
 $ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxtrain
 $ brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
+```
+
+Next, install espeak.
+```
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+$ brew install espeak
 ```
 
 Navigate to the ktane_voice folder and run the following command:
