@@ -1,5 +1,10 @@
 # Charlie: A Keep Talking and Nobody Explodes AI Partner
 
+## Development Notes
+Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by Carnegie Mellon University.
+
+Text-to-speech incorporates espeak.
+
 ## Installation
 
 Regardless of your operating system, you'll need your ruby environment set up first. Specifically, you'll need Ruby and Bundler.
@@ -60,15 +65,12 @@ $ ruby charlie.rb
 
 Have fun!! Please leave issue tickets if these instructions don't work for you! :)
 
-## Development Notes
-Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by Carnegie Mellon University.
-
-Text-to-speech incorporates espeak.
-
 ## Modules
 Each module has a keyword to select it from the main menu, then commands that will give the bot the appropriate data to solve the module.
 
 The bomb will prompt you for bomb variables the first time that they're necessary. It's recommended when playing expert bombs, however, to say "charlie bomb check" at the beginning of the game to get them all out of the way.
+
+If Charlie isn't responding accurately, TURN DOWN YOUR MIC SENSITIVITY. Currently, Charlie is really sensitive to background noise and static. He doesn't like those at all.
 
 ### Bomb Check
 KEYWORD "charlie bomb check"
