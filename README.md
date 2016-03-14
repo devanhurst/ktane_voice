@@ -20,7 +20,16 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install espeak
 ```
 
-Navigate to the ktane_voice folder and run the following command:
+Next, make sure that homebrew has linked the 'portaudio' keg. Run ```brew doctor``` and check for this error:
+```
+Warning: You have unlinked kegs in your Cellar
+Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
+those kegs to fail to run properly once built. Run `brew link` on these:
+    portaudio
+```
+If you see this error, follow the instructions to link portaudio.
+
+Finally, navigate to the ktane_voice folder and run the following command:
 ```
 $ bundle
 ```
