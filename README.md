@@ -1,30 +1,44 @@
 # Charlie: A Keep Talking and Nobody Explodes AI Partner
 
 ## Installation
-Compatible with all operating systems that can run a ruby environment.
+Compatible with all operating systems that can run a ruby environment. The instructions below work for OSX, but may not work for your OS of choice. Feel free to leave an issue ticket!
 
 ### OSX
+You'll need your ruby environment set up first. Specifically, you'll need Ruby, Bundler, and Homebrew.
+
+Next, install Pocketsphinx's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
+
 ```
-bundle
-ruby charlie.rb
+$ brew tap watsonbox/cmu-sphinx
+$ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
+$ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxtrain
+$ brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
 ```
 
-### Other
-Same as above, but pocketsphinx-ruby's dependencies (Pocketsphinx and CMUSphinx) are not included. More detailed instructions to come.
+Navigate to the ktane_voice folder and run the following command:
+```
+$ bundle
+```
 
+You should now be able to launch Charlie.
+```
+$ ruby charlie.rb
+```
+
+Have fun!!
 
 ## Development Notes
 Speech detection incorporates pocketsphinx-ruby, a Ruby wrapper for CMUSphinx by Carnegie Mellon University.
 
 Text-to-speech incorporates espeak.
 
-The bomb will prompt you for bomb variables the first time that they're necessary. It's recommended when playing expert bombs, however, to say "charlie bomb check" at the beginning of the game to get them all out of the way.
-
 ## Modules
 Each module has a keyword to select it from the main menu, then commands that will give the bot the appropriate data to solve the module.
 
+The bomb will prompt you for bomb variables the first time that they're necessary. It's recommended when playing expert bombs, however, to say "charlie bomb check" at the beginning of the game to get them all out of the way.
+
 ### Bomb Check
-keyword: "Bomb Check"
+keyword: "charlie bomb check"
 
 ```
 batteries (0-9)        - Number of batteries
@@ -171,16 +185,15 @@ defuse morse code
 ```
 usage:
 ```
-Say 'code', followed by the combination of 'blip' and 'dash', then 'next'
+Say the combination of 'dot' and 'dash', then 'next'. Really enunciate the difference between 'dot' and 'dash'.
 ```
 example:
 ```
-code blip blip blip next (S)
+dot dot dot next (S)
 ```
 note:
 ```
-The letters can be spoken in any order.
-There is currently no escaping this module in the middle. If an error is made... well... you're out of luck. Fix coming very soon.
+The letters can be spoken in any order. If you believe an error was made, 'escape morse code', 'reset morse code', then start over by saying 'defuse morse code'.
 ```
 
 ### On the subject of Who's on First?
@@ -218,10 +231,6 @@ example:
 one (selecting column one)
 alpha foxtrot whiskey quebec tango echo
 ```
-note:
-```
-There is no escape from this module until a password is found. Fix coming soon.
-```
 
 ### On the subject of the Knob
 keyword:
@@ -236,10 +245,11 @@ example:
 ```
 up down both none both down (UP)
 ```
-### Adding Strikes
+### Adding/Removing Strikes
 On the main menu:
 ```
 add a strike
+remove a strike
 ```
 
 ### Reset Commands
