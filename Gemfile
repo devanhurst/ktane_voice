@@ -4,3 +4,4 @@ gem 'pocketsphinx-ruby'
 gem 'espeak-ruby', :require=>"espeak"
 gem 'require_all'
 gem 'ordinator'
+gem 'pry'
