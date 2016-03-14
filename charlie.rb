@@ -99,8 +99,10 @@ def select_module
       return select_module
 
     when "undo last wire sequence"
-      WireSequences.undo_wire_sequence(@bomb)
-      Speech.new("Sequence undone").speak
+      if !@bomb.wire_sequences_moves.empty?
+        WireSequences.undo_wire_sequence(@bomb)
+        Speech.new("Sequence undone").speak
+      end
       return select_module
 
     when "add a strike"
