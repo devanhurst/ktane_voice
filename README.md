@@ -3,7 +3,6 @@
 ## Installation
 Compatible with all operating systems that can run a ruby environment. The instructions below work for OSX, but may not work for your OS of choice. Feel free to leave an issue ticket!
 
-### OSX
 You'll need your ruby environment set up first. Specifically, you'll need Ruby, Bundler, and Homebrew.
 
 Next, install Pocketsphinx's dependencies for voice recognition. (More detailed instructions here: https://github.com/watsonbox/pocketsphinx-ruby#installation)
