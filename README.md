@@ -52,7 +52,7 @@ Each module has a keyword to select it from the main menu, then commands that wi
 The bomb will prompt you for bomb variables the first time that they're necessary. It's recommended when playing expert bombs, however, to say "charlie bomb check" at the beginning of the game to get them all out of the way.
 
 ### Bomb Check
-keyword: "charlie bomb check"
+KEYWORD "charlie bomb check"
 
 ```
 batteries (0-9)        - Number of batteries
@@ -64,29 +64,29 @@ parallel port (yes/no) - Parallel port
 ```
 
 ### On the subject of Wires
-#####keyword:
+#####KEYWORD
 ```
 defuse wires
 ```
-#####usage:
+#####USAGE
 ```
 ((black/blue/red/white/yellow) wire) [repeat]
 ```
-#####example:
+#####EXAMPLE
 ```
 black wire blue wire white wire
 ```
 
 ### On the subject of Keypads
-#####keyword:
+#####KEYWORD
 ```
 defuse keypads
 ```
-#####usage:
+#####USAGE
 ```
 Say the list of keypads, prefixing each with the word 'key'.
 ```
-#####example:
+#####EXAMPLE
 ```
 key inkblot, key six, key spaceship, key paragraph
 ```
@@ -94,86 +94,86 @@ key inkblot, key six, key spaceship, key paragraph
 List coming soon.
 
 ### On the subject of the Button
-#####keyword:
+#####KEYWORD
 ```
 defuse button
 ```
-#####usage:
+#####USAGE
 ```
 Say the color, then the word. If the button is held, say the colour of the stripe.
 ```
-#####example:
+#####EXAMPLE
 ```
 red abort... (HOLD THE BUTTON. STRIPE COLOUR?)... yellow
 ```
 
 ### On the subject of Simon Says
-#####keyword:
+#####KEYWORD
 ```
 defuse simon
 ```
-#####usage:
+#####USAGE
 ```
 Say the light colour sequence, followed by 'done'.
 ```
-#####example:
+#####EXAMPLE
 ```
 red blue green green yellow done
 ```
 
 ### On the subject of Complicated Wires
-#####keyword:
+#####KEYWORD
 ```
 defuse complicated
 ```
-#####usage:
+#####USAGE
 ```
 Say the combination of attributes (red, blue, star, light) in any order, followed by 'next' to move to the next wire, and done to finish.
 ```
-#####example:
+#####EXAMPLE
 ```
 red blue star, next, nothing, next, blue, next, red light blue, done
 ```
 
 ### On the subject of Wire Sequences
-#####keyword:
+#####KEYWORD
 ```
 defuse sequence
 ```
-u#####sage:
+#####USAGE
 ```
 From top to bottom, say the colour, then the the letter (Alpha, Bravo, Charlie) that it is connected to. Say 'next' to move to the next wire, 'done' to finish. Cut accordingly.
 ```
-#####example:
+#####EXAMPLE
 ```
 red bravo next, red charlie next, black alpha done
 ```
 
 ### On the subject of Memory
-#####keyword:
+#####KEYWORD
 ```
 defuse memory
 ```
-#####usage:
+#####USAGE
 ```
 Say 'sequence', followed by the sequence of numbers, starting with the display number and working from left to right. The keyword must be repeated for each round.
 ```
-#####example:
+#####EXAMPLE
 ```
 defuse memory (ROUND ONE) sequence 3 2 4 3 1
 defuse memory (ROUND TWO) sequence 2 2 1 3 4
 ```
 
 ### On the subject of Mazes
-#####keyword:
+#####KEYWORD
 ```
 defuse mazes
 ```
-#####usage:
+#####USAGE
 ```
 With the top-left coordinate as (1,1); the bottom right as (6,6), give the locations requested. The circles can be given in either order. (x, y)
 ```
-#####example:
+#####EXAMPLE
 ```
 (FIRST CIRCLE?)
 1 1
@@ -193,41 +193,41 @@ O * * * * *
 ```
 
 ### On the subject of Morse Code
-#####keyword:
+#####KEYWORD
 ```
 defuse morse code
 ```
-#####usage:
+#####USAGE
 ```
 Say the combination of 'dot' and 'dash', then 'next'. Really enunciate the difference between 'dot' and 'dash'.
 ```
-#####example:
+#####EXAMPLE
 ```
 dot dot dot next (S)
 ```
-#####note:
+#####NOTE
 ```
 The letters can be spoken in any order. If you believe an error was made, 'escape morse code', 'reset morse code', then start over by saying 'defuse morse code'.
 ```
 
 ### On the subject of Who's on First?
-#####keyword:
+#####KEYWORD
 ```
 defuse words
 ```
-#####usage:
+#####USAGE
 ```
 Say the word in the display. The bot will give you a position. Say the word in that position. The bot will read you a list of words; press the first one you hear that is a button label.
 ```
-#####example:
+#####EXAMPLE
 ```
 The word is YES.
 (MIDDLE-LEFT)
 The word is NEXT.
 ```
-#####Word List
+#####WORD LIST
 
-Display words
+######Display words
 ```
 you are   --  you are words
 first     --  first
@@ -259,7 +259,7 @@ see       --  see a movie
 cee       --  cee word
 ```
 
-##### Button Words
+###### Button Words
 ready    --  ready
 first    --  first
 no       --  no
@@ -291,31 +291,31 @@ like     --  like
 
 
 ### On the subject of Passwords
-keyword:
+KEYWORD
 ```
 defuse password
 ```
-usage:
+USAGE
 ```
 First, select a column.
 Using the Nato Phonetic Alphabet, say all the letters in one column. If a result is found, the bot will read it. If not, it will prompt you for another column.
 ```
-example:
+EXAMPLE
 ```
 one (selecting column one)
 alpha foxtrot whiskey quebec tango echo
 ```
 
 ### On the subject of the Knob
-keyword:
+KEYWORD
 ```
 defuse knob
 ```
-usage:
+USAGE
 ```
 From left to right, say the sequence of light combinations.
 ```
-example:
+EXAMPLE
 ```
 up down both none both down (UP)
 ```
