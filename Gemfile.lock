@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/watsonbox/pocketsphinx-ruby.git
+  revision: f2f562bdc66b86f08631a6bd9d348c73823a3d45
+  ref: f2f562b
+  specs:
+    pocketsphinx-ruby (0.3.0)
+      ffi (>= 1.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,9 +13,7 @@ GEM
     espeak-ruby (1.0.2)
     ffi (1.9.10)
     method_source (0.8.2)
-    ordinator (1.0.1)
-    pocketsphinx-ruby (0.3.0)
-      ffi (>= 1.9)
+    ordinator (1.0.2)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -21,7 +27,7 @@ PLATFORMS
 DEPENDENCIES
   espeak-ruby
   ordinator
-  pocketsphinx-ruby
+  pocketsphinx-ruby!
   pry
   require_all
 

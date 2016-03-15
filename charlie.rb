@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'pocketsphinx-ruby'
 require 'pry'
 require 'ordinator'
