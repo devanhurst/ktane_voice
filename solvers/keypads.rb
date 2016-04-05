@@ -16,6 +16,9 @@ module Keypads
   @count = 0
 
   def sanitize_input(configuration)
+    @possible_answer = []
+    @final_answer = []
+    @count = 0
     recognizer = Pocketsphinx::LiveSpeechRecognizer.new(configuration)
     recognizer.recognize do |symbols|
       puts symbols
@@ -48,8 +51,8 @@ module Keypads
       end
       return @final_answer.join('... ')
     else
-        @possible_answer = []
-        solve_keypads(symbols, count + 1)
+      @possible_answer = []
+      solve_keypads(symbols, count + 1)
     end
   end
 end
