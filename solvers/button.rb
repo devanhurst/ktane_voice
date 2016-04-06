@@ -51,16 +51,16 @@ module Button
   end
 
   def hold_button
-    Speech.new("HOLD THE BUTTON. WHAT IS THE STRIPE COLOUR?").speak
+    Speech.new("HOLD THE BUTTON. STRIPE COLOUR?").speak
     stripe_color = Pocketsphinx::Configuration::Grammar.new('./grammars/buttonstripe.gram')
     Pocketsphinx::LiveSpeechRecognizer.new(stripe_color).recognize do |speech|
       case speech
       when "blue"
-        return "PRESS TIMER... FOUR"
+        return "TIMER... FOUR"
       when "yellow"
-        return "PRESS TIMER... FIVE"
+        return "TIMER... FIVE"
       else
-        return "PRESS TIMER... ONE"
+        return "TIMER... ONE"
       end
     end
   end

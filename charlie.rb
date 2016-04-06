@@ -118,7 +118,8 @@ def select_module
       end
 
     when "charlie the bomb is defused", "charlie we did it", "charlie we're done"
-      Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!", "What a relief.", "Thank goodness.", "Congratulations!", "You deserve a drink."].sample).speak
+      # Speech.new(["It was my pleasure.", "I'm proud of us.", "We did it!", "What a relief.", "Thank goodness.", "Congratulations!", "You deserve a drink."].sample).speak
+      Speech.new("We all deserve a drink.").speak
       return select_module
     when "charlie the bomb detonated", "charlie it detonated", "charlie the bomb blew up", "charlie it blew up", "charlie we lost"
       Speech.new(["It was all my fault.", "It's not your fault", "It's not my fault.", "I hope you're proud of yourself.", "This can't be happening!"].sample).speak
