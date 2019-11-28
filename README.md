@@ -88,29 +88,29 @@ parallel port (yes/no) - Parallel port
 ```
 
 ### On the subject of Wires
-#####KEYWORD
+##### KEYWORD
 ```
 defuse wires
 ```
-#####USAGE
+##### USAGE
 ```
 ((black/blue/red/white/yellow) wire) [repeat]
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 black wire blue wire white wire
 ```
 
 ### On the subject of Keypads
-#####KEYWORD
+##### KEYWORD
 ```
 defuse keypads
 ```
-#####USAGE
+##### USAGE
 ```
 Say the list of keypads, prefixing each with the word 'key'.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 key inkblot, key six, key spaceship, key paragraph
 ```
@@ -118,86 +118,86 @@ key inkblot, key six, key spaceship, key paragraph
 List coming soon.
 
 ### On the subject of the Button
-#####KEYWORD
+##### KEYWORD
 ```
 defuse button
 ```
-#####USAGE
+##### USAGE
 ```
 Say the color, then the word. If the button is held, say the colour of the stripe.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 red abort... (HOLD THE BUTTON. STRIPE COLOUR?)... yellow
 ```
 
 ### On the subject of Simon Says
-#####KEYWORD
+##### KEYWORD
 ```
 defuse simon
 ```
-#####USAGE
+##### USAGE
 ```
 Say the light colour sequence, followed by 'done'.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 red blue green green yellow done
 ```
 
 ### On the subject of Complicated Wires
-#####KEYWORD
+##### KEYWORD
 ```
 defuse complicated
 ```
-#####USAGE
+##### USAGE
 ```
 Say the combination of attributes (red, blue, star, light) in any order, followed by 'next' to move to the next wire, and done to finish.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 red blue star, next, nothing, next, blue, next, red light blue, done
 ```
 
 ### On the subject of Wire Sequences
-#####KEYWORD
+##### KEYWORD
 ```
 defuse sequence
 ```
-#####USAGE
+##### USAGE
 ```
 From top to bottom, say the colour, then the the letter (Alpha, Bravo, Charlie) that it is connected to. Say 'next' to move to the next wire, 'done' to finish. Cut accordingly.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 red bravo next, red charlie next, black alpha done
 ```
 
 ### On the subject of Memory
-#####KEYWORD
+##### KEYWORD
 ```
 defuse memory
 ```
-#####USAGE
+##### USAGE
 ```
 Say 'sequence', followed by the sequence of numbers, starting with the display number and working from left to right. The keyword must be repeated for each round.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 defuse memory (ROUND ONE) sequence 3 2 4 3 1
 defuse memory (ROUND TWO) sequence 2 2 1 3 4
 ```
 
 ### On the subject of Mazes
-#####KEYWORD
+##### KEYWORD
 ```
 defuse mazes
 ```
-#####USAGE
+##### USAGE
 ```
 With the top-left coordinate as (1,1); the bottom right as (6,6), give the locations requested. The circles can be given in either order. (x, y)
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 (FIRST CIRCLE?)
 1 1
@@ -217,41 +217,41 @@ O * * * * *
 ```
 
 ### On the subject of Morse Code
-#####KEYWORD
+##### KEYWORD
 ```
 defuse morse code
 ```
-#####USAGE
+##### USAGE
 ```
 Say the combination of 'dot' and 'dash', then 'next'. Really enunciate the difference between 'dot' and 'dash'.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 dot dot dot next (S)
 ```
-#####NOTE
+##### NOTE
 ```
 The letters can be spoken in any order. If you believe an error was made, 'escape morse code', 'reset morse code', then start over by saying 'defuse morse code'.
 ```
 
 ### On the subject of Who's on First?
-#####KEYWORD
+##### KEYWORD
 ```
 defuse words
 ```
-#####USAGE
+##### USAGE
 ```
 Say the word in the display. The bot will give you a position. Say the word in that position. The bot will read you a list of words; press the first one you hear that is a button label.
 ```
-#####EXAMPLE
+##### EXAMPLE
 ```
 The word is YES.
 (MIDDLE-LEFT)
 The word is NEXT.
 ```
-#####WORD LIST
+##### WORD LIST
 
-######Display words
+###### Display words
 ```
 you are   --  you are words
 first     --  first
