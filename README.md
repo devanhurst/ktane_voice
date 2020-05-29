@@ -114,8 +114,17 @@ Say the list of keypads, prefixing each with the word 'key'.
 ```
 key inkblot, key six, key spaceship, key paragraph
 ```
-<symbol>
-List coming soon.
+Image | Keypad | Image | Keypad | Image | Keypad
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+![balloon](/keypadkeys/ballon.png/) | balloon | ![white star](/keypadkeys/white_star.png/) | white star | ![smiley face](/keypadkeys/smiley_face.png/) | smiley face
+![pyramid](/keypadkeys/pyramid.png/) | pyramid | ![question mark](/keypadkeys/question_mark.png/) | question mark | ![trident](/keypadkeys/trident.png/) | trident
+![lambda](/keypadkeys/lambda.png/) | lambda | ![copyright](/keypadkeys/copyright.png/) | copyright | ![c square](/keypadkeys/c_square.png/) | c square
+![lightning](/keypadkeys/lightning.png/) | lightning | ![butt](/keypadkeys/butt.png/) | butt | ![black star](/keypadkeys/black_star.png/) | black star
+![spaceship](/keypadkeys/spaceship.png/) | spaceship | ![inkblot](/keypadkeys/inkblot.png/) | inkblot | ![snake](/keypadkeys/snake.png/) | snake
+![letter h](/keypadkeys/letter_h.png/) | letter h | ![half r](/keypadkeys/half_r.png/) | half r | ![hash](/keypadkeys/hash.png/) | hash
+![backward c](/keypadkeys/backward_c.png/) | backward c | ![six](/keypadkeys/six.png/) | six | ![a e together](/keypadkeys/a_e_together.png/) | a e together
+![letter e](/keypadkeys/letter_e.png/) | letter e | ![paragraph](/keypadkeys/paragraph.png/) | paragraph | ![letter n](/keypadkeys/letter_n.png/) | letter n
+![curly fry](/keypadkeys/curly_fry.png/) | curly fry | ![upside down p](/keypadkeys/upside_down_p.png/) | upside down p | ![omega](/keypadkeys/omega.png/) | omega
 
 ### On the subject of the Button
 ##### KEYWORD
