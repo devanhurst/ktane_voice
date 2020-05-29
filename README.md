@@ -114,8 +114,35 @@ Say the list of keypads, prefixing each with the word 'key'.
 ```
 key inkblot, key six, key spaceship, key paragraph
 ```
-<symbol>
-List coming soon.
+Image | Keypad
+------------ | -------------
+![balloon](/keypadkeys/ballon.png/) | balloon
+![pyramid](/keypadkeys/pyramid.png/) | pyramid
+![lambda](/keypadkeys/lambda.png/) | lambda
+![lightning](/keypadkeys/lightning.png/) | lightning
+![spaceship](/keypadkeys/spaceship.png/) | spaceship
+![letter h](/keypadkeys/letter_h.png/) | letter h
+![backward c](/keypadkeys/backward_c.png/) | backward c
+![letter e](/keypadkeys/letter_e.png/) | letter e
+![curly fry](/keypadkeys/curly_fry.png/) | curly fry
+![white star](/keypadkeys/white_star.png/) | white star
+![question mark](/keypadkeys/question_mark.png/) | question mark
+![copyright](/keypadkeys/copyright.png/) | copyright
+![butt](/keypadkeys/butt.png/) | butt
+![inkblot](/keypadkeys/inkblot.png/) | inkblot
+![half r](/keypadkeys/half_r.png/) | half r
+![six](/keypadkeys/six.png/) | six
+![paragraph](/keypadkeys/paragraph.png/) | paragraph
+![upside down p](/keypadkeys/upside_down_p.png/) | upside down p
+![smiley face](/keypadkeys/smiley_face.png/) | smiley face
+![trident](/keypadkeys/trident.png/) | trident
+![c square](/keypadkeys/c_square.png/) | c square
+![black star](/keypadkeys/black_star.png/) | black star
+![snake](/keypadkeys/snake.png/) | snake
+![hash](/keypadkeys/hash.png/) | hash
+![a e together](/keypadkeys/a_e_together.png/) | a e together
+![letter n](/keypadkeys/letter_n.png/) | letter n
+![omega](/keypadkeys/omega.png/) | omega
 
 ### On the subject of the Button
 ##### KEYWORD
